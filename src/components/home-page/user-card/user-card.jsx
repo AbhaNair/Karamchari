@@ -8,6 +8,7 @@ import ImgSwitch from "./img-switch";
 import { useEffect } from "react";
 import axios from "axios";
 import { useState } from "react";
+import Tags from "./tags";
 
 export function UserCard({ id }) {
   const [name, setName] = useState(null);
@@ -65,12 +66,20 @@ export function UserCard({ id }) {
     >
       <div className="flex justify-between">
         <Heading title="Employee Details" />
-        <button
-          type="button"
-          className="text-white bg-[#313236] px-3 rounded-md text-lg"
-        >
-          Download info
-        </button>
+        <div className=" flex gap-4">
+          <button
+            type="button"
+            className="text-white bg-[#313236] px-3 rounded-md text-lg"
+          >
+            Update profile picture
+          </button>
+          <button
+            type="button"
+            className="text-white bg-[#313236] px-3 rounded-md text-lg"
+          >
+            Download info
+          </button>
+        </div>
       </div>
       <div className="flex flex-col md:flex-row gap-4 items-center">
         <ImgSwitch />
@@ -90,6 +99,7 @@ export function UserCard({ id }) {
         <Details2 title="Date of birth" content={dob} />
         <Details2 title="Address" content={address} />
       </div>
+      <Tags tag="barbie" />
     </div>
   );
 }

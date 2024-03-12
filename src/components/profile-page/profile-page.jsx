@@ -6,7 +6,7 @@ import ImgSwitch from "../home-page/user-card/img-switch.jsx";
 export default function ProfilePage() {
   return (
     <div className="bg-black h-full text-white flex flex-col gap-5 pl-96 p-10 overflow-auto ">
-      <UserCard />
+      <UserCard id={1} />
       <form className="flex flex-col gap-5" action="" method="post">
         <div
           style={{
