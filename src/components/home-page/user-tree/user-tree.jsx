@@ -208,10 +208,10 @@ export const UserTree = ({ id, managerid }) => {
   useEffect(() => {
     const fetchData = async () => {
       const { data } = await axios.get(
-        `http://localhost:8888/findById/${managerid}`
+        `http://localhost:8080/findById/${managerid}`
       );
       const reportees = await axios.get(
-        `http://localhost:8888/getAllReporteesById/${managerid}`
+        `http://localhost:8080/getAllReporteesById/${managerid}`
       );
       let reporteesList = reportees.data;
       const children = [];

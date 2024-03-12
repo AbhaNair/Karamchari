@@ -1,5 +1,8 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import React, { useState } from "react";
 import axios from "axios";
+import { Icon } from "@iconify/react";
 
 function FileUpload({ heading }) {
   const [file, setFile] = useState();
@@ -28,10 +31,23 @@ function FileUpload({ heading }) {
     <div className="App text-lg">
       <form onSubmit={handleSubmit}>
         <h1>{heading}</h1>
-        <input type="file" onChange={handleChange} />
-        <button type="submit" className="bg-[#313236] p-4 rounded-sm text-lg">
-          Upload
-        </button>
+        <div className="flex items-center justify-between">
+          <input type="file" onChange={handleChange} />
+          <div className="flex gap-4">
+            <button
+              type="submit"
+              className="bg-[#313236] px-4 py-2 rounded-md text-lg"
+            >
+              Re-Upload
+            </button>
+            <button className="bg-[#313236] rounded-md text-lg h-10 px-2 ">
+              <Icon icon="solar:file-download-bold-duotone" />
+            </button>
+            <button className="bg-[#313236] rounded-md text-lg h-10 px-2  ">
+              <Icon icon="mingcute:delete-2-line" />
+            </button>
+          </div>
+        </div>
       </form>
     </div>
   );

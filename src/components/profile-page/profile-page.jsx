@@ -1,14 +1,13 @@
 import { UserInput } from "./user-input";
 import { UserCard } from "../home-page/user-card/user-card.jsx";
 import FileUpload from "./file-upload.jsx";
+import ImgSwitch from "../home-page/user-card/img-switch.jsx";
 
 export default function ProfilePage() {
   return (
     <div className="bg-black h-full text-white flex flex-col gap-5 pl-96 p-10 overflow-auto ">
+      <UserCard />
       <form className="flex flex-col gap-5" action="" method="post">
-        <div>
-          <UserCard />
-        </div>
         <div
           style={{
             backgroundColor: "#212327",
