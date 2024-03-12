@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Tree from "react-d3-tree";
 import axios from "axios";
 import { useCenteredTree } from "./helper";
+import { Heading } from "../user-card/headings";
 
 const containerStyles = {
   maxWidth: "1000px",
@@ -289,6 +290,7 @@ export const UserTree = ({ id, managerid }) => {
 
   return (
     <div className="App">
+      <Heading title="Organisation Chart" />
       <div id="treeWrapper" style={containerStyles} ref={containerRef}>
         {myTreeData && (
           <Tree

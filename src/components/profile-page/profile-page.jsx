@@ -2,6 +2,7 @@ import { UserInput } from "./user-input";
 import { UserCard } from "../home-page/user-card/user-card.jsx";
 import FileUpload from "./file-upload.jsx";
 import ImgSwitch from "../home-page/user-card/img-switch.jsx";
+import { Heading } from "../home-page/user-card/headings.jsx";
 
 export default function ProfilePage() {
   return (
@@ -17,6 +18,15 @@ export default function ProfilePage() {
           }}
           className="flex flex-col gap-5 "
         >
+          <div className="flex justify-between">
+            <Heading title="Banking details" />
+            <button
+              type="button"
+              className="text-white bg-[#313236] px-3 rounded-md text-lg"
+            >
+              Edit info
+            </button>
+          </div>
           <UserInput heading="Account Number" content="394758679" />
           <UserInput heading="Account Type" content="Savings" />
           <UserInput heading="Account Holder Name" content="Natasha Khaleira" />
@@ -33,6 +43,9 @@ export default function ProfilePage() {
           }}
           className="flex flex-col gap-5"
         >
+          <div>
+            <Heading title="Documents" />
+          </div>
           <FileUpload heading="Upload Aadhar" />
           <FileUpload heading="Upload PAN" />
           <FileUpload heading="Upload Offer Letter" />

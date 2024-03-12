@@ -46,7 +46,7 @@ export default function SearchBox1() {
       </Combobox.Label>
       <div className="relative mt-2">
         <Combobox.Input
-          className="w-full rounded-md border-0 bg-neutral-700 py-1 pl-3 pr-12 text-lg text-neutral-200 ring-1 ring-inset ring-neutral-600 focus:ring-2 focus:ring-inset focus:ring-emerald-600"
+          className="w-full rounded-md border-0 bg-[#313236] py-1 pl-3 pr-12 text-lg text-neutral-200 ring-1 ring-inset ring-neutral-600 focus:ring-2 focus:ring-inset focus:ring-emerald-600"
           onChange={(event) => setQuery(event.target.value)}
           displayValue={(person) => person?.name}
         />
@@ -58,7 +58,7 @@ export default function SearchBox1() {
         </Combobox.Button>
 
         {filteredPeople.length > 0 && (
-          <Combobox.Options className="absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-neutral-700 py-1 text-lg shadow-lg focus:outline-none">
+          <Combobox.Options className="absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-[#313236] py-1 text-lg shadow-lg focus:outline-none">
             {filteredPeople.map((person) => (
               <Combobox.Option
                 key={person.id}
