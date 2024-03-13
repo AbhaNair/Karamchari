@@ -1,8 +1,9 @@
 // eslint-disable-next-line react/prop-types
+
 export function Details2({ title, content }) {
   return (
     <div
-      className="rounded-md"
+      className="rounded-md shadow-lg"
       style={{
         backgroundColor: "rgba(188, 188, 189,0.1)",
         padding: "10px 16px",

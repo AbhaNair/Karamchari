@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import axios from "axios";
 import { useState } from "react";
 import Tags from "./tags";
+import { Icon } from "@iconify/react";
 
 export function UserCard({ id }) {
   const [name, setName] = useState(null);
@@ -58,26 +59,27 @@ export function UserCard({ id }) {
     <div
       style={{
         backgroundColor: "#212327",
-        padding: "40px",
         maxWidth: "1000px",
         borderRadius: "30px",
       }}
-      className="flex flex-col gap-5"
+      className="flex flex-col gap-2 lg:gap-5 p-4 lg:p-10"
     >
       <div className="flex justify-between">
         <Heading title="Employee Details" />
-        <div className=" flex gap-4">
+        <div className=" flex  flex-col gap-4 lg:flex-row">
           <button
             type="button"
-            className="text-white bg-[#313236] px-3 rounded-md text-lg"
+            className="text-white bg-[#313236] px-3 rounded-md text-lg flex justify-center items-center gap-1 active:bg-gray-500 hover:bg-gray-700"
           >
-            Update profile picture
+            <Icon icon="material-symbols:upload" style={{ color: "white" }} />
+            <span>Update Profile Picture</span>
           </button>
           <button
             type="button"
-            className="text-white bg-[#313236] px-3 rounded-md text-lg"
+            className="text-white bg-[#313236] px-3 rounded-md text-lg flex justify-center items-center gap-1 active:bg-gray-500 hover:bg-gray-700"
           >
-            Download info
+            <Icon icon="material-symbols:download" style={{ color: "white" }} />
+            <span>Download Info</span>
           </button>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
 import { Combobox } from "@headlessui/react";
+import SearchMenu from "./search-menu";
+import Options from "./options";
 
 const people = [
   {
@@ -46,16 +47,11 @@ export default function SearchBox1() {
       </Combobox.Label>
       <div className="relative mt-2">
         <Combobox.Input
-          className="w-full rounded-md border-0 bg-[#313236] py-1 pl-3 pr-12 text-lg text-neutral-200 ring-1 ring-inset ring-neutral-600 focus:ring-2 focus:ring-inset focus:ring-emerald-600"
+          className="w-full rounded-md border-0 bg-[#313236] py-1 pr-12 text-lg text-neutral-200 ring-1 ring-inset ring-neutral-600 focus:ring-2 focus:ring-inset focus:ring-emerald-600"
           onChange={(event) => setQuery(event.target.value)}
           displayValue={(person) => person?.name}
         />
-        <Combobox.Button className="absolute inset-y-0 right-0 flex items-center rounded-r-md px-2 focus:outline-none">
-          <ChevronUpDownIcon
-            className="h-5 w-5 text-gray-400"
-            aria-hidden="true"
-          />
-        </Combobox.Button>
+        <Combobox.Button className="absolute inset-y-0 right-0 flex items-center rounded-r-md focus:outline-none "></Combobox.Button>
 
         {filteredPeople.length > 0 && (
           <Combobox.Options className="absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-[#313236] py-1 text-lg shadow-lg focus:outline-none">
@@ -104,6 +100,20 @@ export default function SearchBox1() {
             ))}
           </Combobox.Options>
         )}
+      </div>
+      <div className=" grid grid-cols-2 gap-2 pt-4">
+        <Options
+          img="/name.jpg"
+          heading="Find your Colleague!"
+          color="#44E7C6"
+        />
+        <Options img="/id.jpeg" heading="Find by ID!" color="#826288" />
+        <Options
+          img="/tags.jpeg"
+          heading="Find your Community!"
+          color="#FDD9EF"
+        />
+        <Options img="/pod.jpeg" heading="Find your Pod!" color="#0053E8" />
       </div>
     </Combobox>
   );
